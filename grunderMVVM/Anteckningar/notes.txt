@@ -11,3 +11,4 @@ Nyckelkoncept
  - Bindings (Vi kan binda gränssnittet mot en property med Binding)
  - Commands (För att kunna skicka signaler eller kommandon från användaren till VM)
     Dessa kräver ett RelayCommand som är lite småkrångligt att  förstå. Men den metoden behöver sällan ändras.
+- User Control
