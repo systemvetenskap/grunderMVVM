@@ -1,0 +1,13 @@
+MVVM
+
+M = model 
+VM = ViewModel 
+
+INotifyPropertyChanged -- som kräver en event handler som säger när en property har ändrats.
+
+För att slippa detta införde vi Fody
+
+Nyckelkoncept
+ - Bindings (Vi kan binda gränssnittet mot en property med Binding)
+ - Commands (För att kunna skicka signaler eller kommandon från användaren till VM)
+    Dessa kräver ett RelayCommand som är lite småkrångligt att  förstå. Men den metoden behöver sällan ändras.

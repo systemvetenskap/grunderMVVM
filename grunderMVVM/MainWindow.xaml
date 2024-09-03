@@ -36,5 +36,6 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        <Button Content="Nytt objekt" Command="{Binding AddObjectCommand}" Width="100" Height="40" />
     </Grid>
 </Window>
