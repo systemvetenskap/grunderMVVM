@@ -9,7 +9,7 @@ namespace grunderMVVM.Models
     public interface ICanFly
     {
         int Altitude { get;  }
-        //double Speed { get; }
+        double Speed { get; }
         /// <summary>
         /// Egenskap som avgör typ
         /// </summary>

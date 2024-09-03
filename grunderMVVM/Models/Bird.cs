@@ -8,10 +8,16 @@ namespace grunderMVVM.Models
 {
     public class Bird : ICanFly
     {
-        public int Altitude { get;  }
+        public int Altitude { get; }
 
         public string TypeName => "Fågel";
 
+        public double Speed { get; private set; }
+
+        public Bird()
+        {
+            Speed = 12.4;
+        }
         public void Fly()
         {
            // flyg på

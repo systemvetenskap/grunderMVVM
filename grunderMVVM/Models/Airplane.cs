@@ -8,6 +8,8 @@ namespace grunderMVVM.Models
         public int NumberOfPassengers { get; set; }
         public string TypeName => "Flygplan";
 
+        public double Speed => 1;
+
         public void Fly()
         {
 

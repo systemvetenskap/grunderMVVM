@@ -12,7 +12,7 @@
     </Window.DataContext>
     <Grid>
         <ListBox ItemsSource="{Binding FlyingObjects}" 
-                
+                 SelectedItem="{Binding SelectedFlyingObject}"
                  HorizontalAlignment="Center" VerticalAlignment="Center" 
                  Width="400" Height="300"
                  BorderBrush="#007ACC" BorderThickness="2"
