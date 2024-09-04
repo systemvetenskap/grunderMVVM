@@ -12,3 +12,11 @@ Nyckelkoncept
  - Commands (För att kunna skicka signaler eller kommandon från användaren till VM)
     Dessa kräver ett RelayCommand som är lite småkrångligt att  förstå. Men den metoden behöver sällan ändras.
 - User Control
+   en komponent som vi använder i gränssnittet för att skapa modulära komponenter
+   Värden
+   * en UserControl kan ha en egen vymodell. Ska ni nog undvika
+   * Den har en VyModell, men den hittar den någon annan stans
+   * Att den inte har en vymodell, men däremot får värden via properties
+
+   om min UserControl får ett värde utifrån måste den oftast ligga i en egen property inuti min 
+   UserControl. För att möjliggöra detta använder vi en dependency Property

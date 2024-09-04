@@ -5,7 +5,9 @@ VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "grunderMVVM", "grunderMVVM\grunderMVVM.csproj", "{3D811AA0-8F1D-44A4-83CF-160F10C32858}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yatzy", "Yatzy\Yatzy.csproj", "{1CFA76A7-52A5-4C69-A743-9B7AC9FA3875}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yatzy", "Yatzy\Yatzy.csproj", "{1CFA76A7-52A5-4C69-A743-9B7AC9FA3875}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YatzyTests", "YatzyTests\YatzyTests.csproj", "{AF7967DD-CFF0-4A58-A8EE-A17BADB4315E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{1CFA76A7-52A5-4C69-A743-9B7AC9FA3875}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CFA76A7-52A5-4C69-A743-9B7AC9FA3875}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CFA76A7-52A5-4C69-A743-9B7AC9FA3875}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF7967DD-CFF0-4A58-A8EE-A17BADB4315E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF7967DD-CFF0-4A58-A8EE-A17BADB4315E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF7967DD-CFF0-4A58-A8EE-A17BADB4315E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF7967DD-CFF0-4A58-A8EE-A17BADB4315E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

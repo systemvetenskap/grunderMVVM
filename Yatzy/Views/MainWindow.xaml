@@ -5,14 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Yatzy"
         xmlns:views="clr-namespace:Yatzy.Views"
+        xmlns:vm ="clr-namespace:Yatzy.ViewModels"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <vm:GameViewModel/>
+    </Window.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <views:ScoreBoardControl Grid.Column="0"/>
-        <views:ScoreBoardControl Grid.Column="1"/>
+        <views:ScoreBoardControl  Grid.Column="0" />
+        <StackPanel Grid.Column="1" Orientation="Horizontal">
+            <views:DiceControl DiceValue="{Binding DiceValues[0]}"  Width="50" Height="50" Margin="5"/>
+            <views:DiceControl DiceValue="{Binding DiceValues[1]}"  Width="50" Height="50"/>
+            <views:DiceControl DiceValue="{Binding DiceValues[2]}"  Width="50" Height="50"/>
+            <views:DiceControl DiceValue="{Binding DiceValues[3]}"  Width="50" Height="50"/>
+            <views:DiceControl DiceValue="{Binding DiceValues[4]}"  Width="50" Height="50"/>
+        </StackPanel>
     </Grid>
 </Window>

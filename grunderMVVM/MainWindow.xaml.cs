@@ -19,6 +19,8 @@ namespace grunderMVVM
         public MainWindow()
         {
             InitializeComponent();
+            var button = new Button();
+            button.
         }
     }
 }

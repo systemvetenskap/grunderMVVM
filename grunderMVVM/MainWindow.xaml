@@ -37,5 +37,8 @@
             </ListBox.ItemTemplate>
         </ListBox>
         <Button Content="Nytt objekt" Command="{Binding AddObjectCommand}" Width="100" Height="40" />
+        <Button x:Name="button" Content="Knapp 1" HorizontalAlignment="Left" Margin="85,36,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="button1" Content="Fisk" HorizontalAlignment="Left" Margin="75,79,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="button2" Content="Fågel" HorizontalAlignment="Left" Margin="75,120,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
