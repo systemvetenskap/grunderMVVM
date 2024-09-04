@@ -16,7 +16,7 @@ namespace grunderMVVM.Models
 
         public Bird()
         {
-            Speed = 5;
+            Speed = 5.4;
         }
         public void Fly()
         {
