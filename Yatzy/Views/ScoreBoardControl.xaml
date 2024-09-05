@@ -4,50 +4,290 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Yatzy.Views"
+             xmlns:enums="clr-namespace:Yatzy.Enums"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" FontSize="25">
 
     <Grid DataContext="{Binding ScoreCardViewModel}">
-        <Grid Margin="0,25,20,45">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="88"/>
-            </Grid.ColumnDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
+        <Grid.RowDefinitions>
+            <!-- Övre sektion -->
+            <RowDefinition Height="Auto"/>
+            <!-- Ettor -->
+            <RowDefinition Height="Auto"/>
+            <!-- Tvåor -->
+            <RowDefinition Height="Auto"/>
+            <!-- Treor -->
+            <RowDefinition Height="Auto"/>
+            <!-- Fyror -->
+            <RowDefinition Height="Auto"/>
+            <!-- Femmor -->
+            <RowDefinition Height="Auto"/>
+            <!-- Sexor -->
+            <RowDefinition Height="Auto"/>
+            <!-- Bonus -->
+            <RowDefinition Height="Auto"/>
+            <!-- Total Övre Sektion -->
 
-            <Label x:Name="captionOnes" Tag="1" Content="Ettor" HorizontalAlignment="Right" VerticalAlignment="Top" Foreground="#FFFF4E96" Grid.Column="0" Grid.Row="0" />
-            <TextBox Text="{Binding Ones}" x:Name="txtOnes"  HorizontalAlignment="Left" Height="36" TextWrapping="Wrap" VerticalAlignment="Center" Margin="0,5,5,0" Width="50" Grid.Column="1" Grid.Row="0"  TextAlignment="Right"/>
+            <!-- Nedre sektion -->
+            <RowDefinition Height="Auto"/>
+            <!-- Ett par -->
+            <RowDefinition Height="Auto"/>
+            <!-- Två par -->
+            <RowDefinition Height="Auto"/>
+            <!-- Tretal -->
+            <RowDefinition Height="Auto"/>
+            <!-- Fyrtal -->
+            <RowDefinition Height="Auto"/>
+            <!-- Kåk -->
+            <RowDefinition Height="Auto"/>
+            <!-- Liten Stege -->
+            <RowDefinition Height="Auto"/>
+            <!-- Stor Stege -->
+            <RowDefinition Height="Auto"/>
+            <!-- Yatzy -->
+            <RowDefinition Height="Auto"/>
+            <!-- Chans -->
+            <RowDefinition Height="Auto"/>
+            <!-- Total Nedre Sektion -->
+        </Grid.RowDefinitions>
 
-            <Label x:Name="captionTwos" Tag="2" Content="Tvåor" HorizontalAlignment="Right" VerticalAlignment="Top" Foreground="#FFFF4E96" Grid.Column="0" Grid.Row="1" />
-            <TextBox x:Name="txtTwos" HorizontalAlignment="Left" Height="36" TextWrapping="Wrap" VerticalAlignment="Center" Margin="0,5,5,0" Width="50" Grid.Column="1" Grid.Row="1"  TextAlignment="Right"/>
+        <!-- Övre sektion -->
+        <Button Content="Ettor"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Foreground="#FFFF4E96"
+            Background="Transparent"
+            BorderThickness="0"
+            Grid.Row="0"
+            Grid.Column="0"
+            Cursor="Hand"
+            Command="{Binding SelectCategoryCommand}"
+            CommandParameter="{x:Static enums:YatzyCategory.Ones}" />
+        <TextBox Text="{Binding Ones, Mode=OneWay}" IsReadOnly="True" HorizontalAlignment="Left" Height="36" VerticalAlignment="Center" Margin="5,0,0,0" Width="50" Grid.Row="0" Grid.Column="1" TextAlignment="Right"/>
 
-            <Label x:Name="captionThrees" Content="Treor" HorizontalAlignment="Right" VerticalAlignment="Top" Foreground="#FFFF4E96" Grid.Column="0" Grid.Row="2"/>
-            <TextBox x:Name="txtThrees" HorizontalAlignment="Left" Height="36" TextWrapping="Wrap" VerticalAlignment="Center" Margin="0,5,5,0" Width="50" Grid.Column="1" Grid.Row="2"  TextAlignment="Right"/>
+        <Button Content="Tvåor"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Foreground="#FFFF4E96"
+            Background="Transparent"
+            BorderThickness="0"
+            Grid.Row="1"
+            Grid.Column="0"
+            Cursor="Hand"
+            Command="{Binding SelectCategoryCommand}"
+            CommandParameter="{x:Static enums:YatzyCategory.Twos}" />
+        <TextBox Text="{Binding Twos, Mode=OneWay}" IsReadOnly="True" HorizontalAlignment="Left" Height="36" VerticalAlignment="Center" Margin="5,0,0,0" Width="50" Grid.Row="1" Grid.Column="1" TextAlignment="Right"/>
 
-            <Label x:Name="captionFours" Content="Fyror" HorizontalAlignment="Right" VerticalAlignment="Top" Foreground="#FFFF4E96" Grid.Column="0" Grid.Row="3"/>
-            <TextBox x:Name="txtFours" HorizontalAlignment="Left" Height="36" TextWrapping="Wrap" VerticalAlignment="Center" Margin="0,5,5,0" Width="50" Grid.Column="1" Grid.Row="3"  TextAlignment="Right"/>
+        <Button Content="Treor"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Foreground="#FFFF4E96"
+            Background="Transparent"
+            BorderThickness="0"
+            Grid.Row="2"
+            Grid.Column="0"
+            Cursor="Hand"
+            Command="{Binding SelectCategoryCommand}"
+            CommandParameter="{x:Static enums:YatzyCategory.Threes}" />
+        <TextBox Text="{Binding Threes, Mode=OneWay}" IsReadOnly="True" HorizontalAlignment="Left" Height="36" VerticalAlignment="Center" Margin="5,0,0,0" Width="50" Grid.Row="2" Grid.Column="1" TextAlignment="Right"/>
 
-            <Label x:Name="captionFives" Content="Femmor" HorizontalAlignment="Right" VerticalAlignment="Top" Foreground="#FFFF4E96" Grid.Column="0" Grid.Row="4"/>
-            <TextBox x:Name="txtFives" HorizontalAlignment="Left" Height="36" TextWrapping="Wrap" VerticalAlignment="Center" Margin="0,5,5,0" Width="50" Grid.Column="1" Grid.Row="4"  TextAlignment="Right"/>
+        <Button Content="Fyror"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Foreground="#FFFF4E96"
+            Background="Transparent"
+            BorderThickness="0"
+            Grid.Row="3"
+            Grid.Column="0"
+            Cursor="Hand"
+            Command="{Binding SelectCategoryCommand}"
+            CommandParameter="{x:Static enums:YatzyCategory.Fours}" />
+        <TextBox Text="{Binding Fours, Mode=OneWay}" IsReadOnly="True" HorizontalAlignment="Left" Height="36" VerticalAlignment="Center" Margin="5,0,0,0" Width="50" Grid.Row="3" Grid.Column="1" TextAlignment="Right"/>
 
-            <Label x:Name="captionSixes" Content="Sexor" HorizontalAlignment="Right" VerticalAlignment="Top" Foreground="#FFFF4E96" Grid.Column="0" Grid.Row="5"/>
-            <TextBox x:Name="txtSixes" Text="0"  HorizontalAlignment="Left" Height="36" TextWrapping="Wrap" VerticalAlignment="Center" Margin="0,5,5,0" Width="50" Grid.Column="1" Grid.Row="5"  TextAlignment="Right"/>
+        <Button Content="Femmor"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Foreground="#FFFF4E96"
+            Background="Transparent"
+            BorderThickness="0"
+            Grid.Row="4"
+            Grid.Column="0"
+            Cursor="Hand"
+            Command="{Binding SelectCategoryCommand}"
+            CommandParameter="{x:Static enums:YatzyCategory.Fives}" />
+        <TextBox Text="{Binding Fives, Mode=OneWay}" IsReadOnly="True" HorizontalAlignment="Left" Height="36" VerticalAlignment="Center" Margin="5,0,0,0" Width="50" Grid.Row="4" Grid.Column="1" TextAlignment="Right"/>
 
-            <Label x:Name="captionBonus" Content="Bonus" HorizontalAlignment="Right" VerticalAlignment="Top" Foreground="#FFFF4E96" FontWeight="Bold" Grid.Column="0" Grid.Row="6"  />
-            <TextBox x:Name="txtBonus" HorizontalAlignment="Left" Height="36" TextWrapping="Wrap" VerticalAlignment="Center" Margin="0,5,5,0" Width="50" Grid.Column="1" Grid.Row="6" TextAlignment="Right"/>
+        <Button Content="Sexor"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Foreground="#FFFF4E96"
+            Background="Transparent"
+            BorderThickness="0"
+            Grid.Row="5"
+            Grid.Column="0"
+            Cursor="Hand"
+            Command="{Binding SelectCategoryCommand}"
+            CommandParameter="{x:Static enums:YatzyCategory.Sixes}" />
+        <TextBox Text="{Binding Sixes, Mode=OneWay}" IsReadOnly="True" HorizontalAlignment="Left" Height="36" VerticalAlignment="Center" Margin="5,0,0,0" Width="50" Grid.Row="5" Grid.Column="1" TextAlignment="Right"/>
 
-            <Label x:Name="captionTotal" Content="Total" HorizontalAlignment="Right" VerticalAlignment="Top" Foreground="#FFFF4E96" FontWeight="Bold" Grid.Column="0" Grid.Row="7"/>
-            <TextBox x:Name="txtTotal" Text="0" HorizontalAlignment="Left" Height="36" TextWrapping="Wrap" VerticalAlignment="Center" Margin="0,5,5,0" Width="50" Grid.Column="1" Grid.Row="7"  TextAlignment="Right"/>
-        </Grid>
+        <Button Content="Bonus"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Foreground="#FFFF4E96"
+            Background="Transparent"
+            BorderThickness="0"
+            FontWeight="Bold"
+            Grid.Row="6"
+            Grid.Column="0"
+            IsEnabled="False" />
+        <TextBox Text="{Binding Bonus, Mode=OneWay}" IsReadOnly="True" HorizontalAlignment="Left" Height="36" VerticalAlignment="Center" Margin="5,0,0,0" Width="50" Grid.Row="6" Grid.Column="1" TextAlignment="Right"/>
+
+        <Button Content="Total"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Foreground="#FFFF4E96"
+            Background="Transparent"
+            BorderThickness="0"
+            FontWeight="Bold"
+            Grid.Row="7"
+            Grid.Column="0"
+            IsEnabled="False" />
+        <TextBox Text="{Binding TotalUpperSectionWithBonus, Mode=OneWay}" IsReadOnly="True" HorizontalAlignment="Left" Height="36" VerticalAlignment="Center" Margin="5,0,0,0" Width="50" Grid.Row="7" Grid.Column="1" TextAlignment="Right"/>
+
+        <!-- Nedre sektion -->
+        <Button Content="Ett par"
+             HorizontalAlignment="Right"
+             VerticalAlignment="Center"
+             Foreground="#FFFF4E96"
+             Background="Transparent"
+             BorderThickness="0"
+             Grid.Row="8"
+             Grid.Column="0"
+             Cursor="Hand"
+             Command="{Binding SelectCategoryCommand}"
+             CommandParameter="{x:Static enums:YatzyCategory.OnePair}" 
+             Margin="0,20,0,0"/>
+        <TextBox Text="{Binding OnePair, Mode=OneWay}" IsReadOnly="True" HorizontalAlignment="Left" Height="36" VerticalAlignment="Center" Margin="5,20,0,0" Width="50" Grid.Row="8" Grid.Column="1" TextAlignment="Right"/>
+
+        <Button Content="Två par"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Foreground="#FFFF4E96"
+            Background="Transparent"
+            BorderThickness="0"
+            Grid.Row="9"
+            Grid.Column="0"
+            Cursor="Hand"
+            Command="{Binding SelectCategoryCommand}"
+            CommandParameter="{x:Static enums:YatzyCategory.TwoPairs}" />
+        <TextBox Text="{Binding TwoPairs, Mode=OneWay}" IsReadOnly="True" HorizontalAlignment="Left" Height="36" VerticalAlignment="Center" Margin="5,0,0,0" Width="50" Grid.Row="9" Grid.Column="1" TextAlignment="Right"/>
+
+        <Button Content="Tretal"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Foreground="#FFFF4E96"
+            Background="Transparent"
+            BorderThickness="0"
+            Grid.Row="10"
+            Grid.Column="0"
+            Cursor="Hand"
+            Command="{Binding SelectCategoryCommand}"
+            CommandParameter="{x:Static enums:YatzyCategory.ThreeOfAKind}" />
+        <TextBox Text="{Binding ThreeOfAKind, Mode=OneWay}" IsReadOnly="True" HorizontalAlignment="Left" Height="36" VerticalAlignment="Center" Margin="5,0,0,0" Width="50" Grid.Row="10" Grid.Column="1" TextAlignment="Right"/>
+
+        <Button Content="Fyrtal"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Foreground="#FFFF4E96"
+            Background="Transparent"
+            BorderThickness="0"
+            Grid.Row="11"
+            Grid.Column="0"
+            Cursor="Hand"
+            Command="{Binding SelectCategoryCommand}"
+            CommandParameter="{x:Static enums:YatzyCategory.FourOfAKind}" />
+        <TextBox Text="{Binding FourOfAKind, Mode=OneWay}" IsReadOnly="True" HorizontalAlignment="Left" Height="36" VerticalAlignment="Center" Margin="5,0,0,0" Width="50" Grid.Row="11" Grid.Column="1" TextAlignment="Right"/>
+
+        <Button Content="Kåk"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Foreground="#FFFF4E96"
+            Background="Transparent"
+            BorderThickness="0"
+            Grid.Row="12"
+            Grid.Column="0"
+            Cursor="Hand"
+            Command="{Binding SelectCategoryCommand}"
+            CommandParameter="{x:Static enums:YatzyCategory.FullHouse}" />
+        <TextBox Text="{Binding FullHouse, Mode=OneWay}" IsReadOnly="True" HorizontalAlignment="Left" Height="36" VerticalAlignment="Center" Margin="5,0,0,0" Width="50" Grid.Row="12" Grid.Column="1" TextAlignment="Right"/>
+
+        <Button Content="Liten Stege"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Foreground="#FFFF4E96"
+            Background="Transparent"
+            BorderThickness="0"
+            Grid.Row="13"
+            Grid.Column="0"
+            Cursor="Hand"
+            Command="{Binding SelectCategoryCommand}"
+            CommandParameter="{x:Static enums:YatzyCategory.SmallStraight}" />
+        <TextBox Text="{Binding SmallStraight, Mode=OneWay}" IsReadOnly="True" HorizontalAlignment="Left" Height="36" VerticalAlignment="Center" Margin="5,0,0,0" Width="50" Grid.Row="13" Grid.Column="1" TextAlignment="Right"/>
+
+        <Button Content="Stor Stege"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Foreground="#FFFF4E96"
+            Background="Transparent"
+            BorderThickness="0"
+            Grid.Row="14"
+            Grid.Column="0"
+            Cursor="Hand"
+            Command="{Binding SelectCategoryCommand}"
+            CommandParameter="{x:Static enums:YatzyCategory.LargeStraight}" />
+        <TextBox Text="{Binding LargeStraight, Mode=OneWay}" IsReadOnly="True" HorizontalAlignment="Left" Height="36" VerticalAlignment="Center" Margin="5,0,0,0" Width="50" Grid.Row="14" Grid.Column="1" TextAlignment="Right"/>
+
+        <Button Content="Yatzy"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Foreground="#FFFF4E96"
+            Background="Transparent"
+            BorderThickness="0"
+            Grid.Row="15"
+            Grid.Column="0"
+            Cursor="Hand"
+            Command="{Binding SelectCategoryCommand}"
+            CommandParameter="{x:Static enums:YatzyCategory.Yatzy}" />
+        <TextBox Text="{Binding Yatzy, Mode=OneWay}" IsReadOnly="True" HorizontalAlignment="Left" Height="36" VerticalAlignment="Center" Margin="5,0,0,0" Width="50" Grid.Row="15" Grid.Column="1" TextAlignment="Right"/>
+
+        <Button Content="Chans"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Foreground="#FFFF4E96"
+            Background="Transparent"
+            BorderThickness="0"
+            Grid.Row="16"
+            Grid.Column="0"
+            Cursor="Hand"
+            Command="{Binding SelectCategoryCommand}"
+            CommandParameter="{x:Static enums:YatzyCategory.Chance}" />
+        <TextBox Text="{Binding Chance, Mode=OneWay}" IsReadOnly="True" HorizontalAlignment="Left" Height="36" VerticalAlignment="Center" Margin="5,0,0,0" Width="50" Grid.Row="16" Grid.Column="1" TextAlignment="Right"/>
+
+        <Button Content="Total"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Foreground="#FFFF4E96"
+            Background="Transparent"
+            BorderThickness="0"
+            FontWeight="Bold"
+            Grid.Row="17"
+            Grid.Column="0"
+            IsEnabled="False" />
+        <TextBox Text="{Binding GrandTotal, Mode=OneWay}" IsReadOnly="True" HorizontalAlignment="Left" Height="36" VerticalAlignment="Center" Margin="5,0,0,0" Width="50" Grid.Row="17" Grid.Column="1" TextAlignment="Right"/>
     </Grid>
 </UserControl>

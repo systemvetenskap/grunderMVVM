@@ -8,21 +8,21 @@ namespace Yatzy.Enums
 {
     public enum YatzyCategory
     {
-        Ones,  // Ettor
-        Twos,  // Tvåor
-        Threes,  // Treor
-        Fours,  // Fyror
-        Fives,  // Femmor
-        Sixes,  // Sexor
-        Pair,   // Par
-        TwoPairs,  // Två par
-        ThreeOfAKind,  // Tretal
-        FourOfAKind,  // Fyrtal
-        FullHouse,  // Kåk
-        SmallStraight,  // Liten stege
-        LargeStraight,  // Stor stege
-        Chance,  // Chans
-        Yatzy  // Yatzy
+        Ones,
+        Twos,
+        Threes,
+        Fours,
+        Fives,
+        Sixes,
+        OnePair,
+        TwoPairs,
+        ThreeOfAKind,
+        FourOfAKind,
+        FullHouse,
+        SmallStraight,
+        LargeStraight,
+        Yatzy,
+        Chance
     }
 
 }

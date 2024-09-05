@@ -1,9 +1,12 @@
 ﻿using PropertyChanged;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using Yatzy.Commands;
 using Yatzy.Enums;
 
 namespace Yatzy.ViewModels
@@ -11,21 +14,20 @@ namespace Yatzy.ViewModels
     [AddINotifyPropertyChangedInterface]
     public class GameViewModel
     {
+        public RelayCommand RollDiceCommand { get; set; }
         public ScoreCardViewModel ScoreCardViewModel { get; set; } = new ScoreCardViewModel();
         public YatzyCategory SelectedCategory { get; set; }
         private Random _random = new Random();
-
-        // En lista för att hålla värden på fem tärningar
-        public List<int> DiceValues { get; private set; }
-
-        // Property för den senaste kastade tärningen
-        public int CurrentDiceValue { get; private set; }
+        public int CurrentRoll { get; set; }
+        public ObservableCollection<int> DiceValues { get; private set; }
+        public event EventHandler CanExecuteChanged;
 
         public GameViewModel()
         {
             // Initiera listan med fem tärningar, alla med standardvärdet 0
-            DiceValues = new List<int>(new int[5]);
-            RollDice();
+            DiceValues = new ObservableCollection<int>(new int[5]);
+            RollDiceCommand = new RelayCommand(RollDice, CanRollDice);
+            ScoreCardViewModel.CategorySelected += OnCategorySelected;
         }
 
 
@@ -38,10 +40,29 @@ namespace Yatzy.ViewModels
                 DiceValues[i] = _random.Next(1, 7);
             }
 
-            // Här sätter vi CurrentDiceValue till värdet på den första tärningen som ett exempel.
-            // Du kan ändra detta till den sista tärningen eller något annat beroende på din logik.
-            CurrentDiceValue = DiceValues[0];
+            CurrentRoll++;
+            RollDiceCommand.RaiseCanExecuteChanged();
         }
+
+        private void OnCategorySelected(object sender, YatzyCategory category)
+        {
+            ResetDice();
+           // PlaceBetCommand.Execute(category);
+        }
+
+        private void ResetDice()
+        {
+            CurrentRoll = 0;
+            RollDiceCommand.RaiseCanExecuteChanged();
+
+        }
+
+        private bool CanRollDice()
+        {
+            return CurrentRoll < 3;
+        }
+
+        public void RaiseCanExecuteChanged() => CanExecuteChanged?.Invoke(this, EventArgs.Empty);
     }
 
 

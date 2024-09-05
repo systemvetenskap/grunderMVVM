@@ -20,7 +20,14 @@ namespace grunderMVVM
         {
             InitializeComponent();
             var button = new Button();
-            button.
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if(sender is Button button)
+            {
+
+            }
         }
     }
 }

@@ -24,5 +24,6 @@
             <views:DiceControl DiceValue="{Binding DiceValues[3]}"  Width="50" Height="50"/>
             <views:DiceControl DiceValue="{Binding DiceValues[4]}"  Width="50" Height="50"/>
         </StackPanel>
+        <Button Content="Kasta" Command="{Binding RollDiceCommand}" Width="100" Height="40" />
     </Grid>
 </Window>

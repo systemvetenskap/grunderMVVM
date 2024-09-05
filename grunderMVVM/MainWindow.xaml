@@ -11,6 +11,7 @@
         <vm:MainViewModel />
     </Window.DataContext>
     <Grid>
+        <Button Click="Button_Click"/>
         <ListBox ItemsSource="{Binding FlyingObjects}" 
                  SelectedItem="{Binding SelectedFlyingObject}"
                  HorizontalAlignment="Center" VerticalAlignment="Center" 
