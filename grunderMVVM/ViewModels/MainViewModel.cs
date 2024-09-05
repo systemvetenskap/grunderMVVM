@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using PropertyChanged;
 using System.Windows.Input;
 using grunderMVVM.Commands;
-//ny testkommentar
+//ny testkommentar done
 namespace grunderMVVM.ViewModels
 {
     [AddINotifyPropertyChangedInterface]
