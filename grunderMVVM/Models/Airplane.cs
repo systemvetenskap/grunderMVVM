@@ -18,5 +18,6 @@ namespace grunderMVVM.Models
         {
 
         }
+        private List<string> names = new List<string>();    
     }
 }
