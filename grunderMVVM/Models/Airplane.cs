@@ -11,6 +11,7 @@ namespace grunderMVVM.Models
         public int NumberOfGoods { get; set; }
         public string Id { get; set; }
         public int NumberOfBags { get; set; }
+        public string Id { get; set; }
         public string TypeName => "Flygplan";
 
         public double Speed => 1;
