@@ -10,7 +10,7 @@ namespace grunderMVVM.Models
         public int FreightWeight { get; set; }
         public string Id { get; set; }
         public string TypeName => "Flygplan";
-        //Ny kommentar...
+        //Ny kommentar.
         public double Speed => 1;
         public double Fuel => 1;
         public void Fly()
