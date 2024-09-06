@@ -8,6 +8,7 @@ namespace grunderMVVM.Models
         public int NumberOfPassengers { get; set; }
         public int NumberOfFirstClassPassengers { get; set; }
         public int NumberOfItems{ get; set; }
+        public int NumberOfGoods { get; set; }
         public string Id { get; set; }
         public string TypeName => "Flygplan";
 
