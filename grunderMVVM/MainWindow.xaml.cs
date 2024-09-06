@@ -20,7 +20,6 @@ namespace grunderMVVM
         {
             InitializeComponent();
             var button = new Button();
-            button.
         }
     }
 }
